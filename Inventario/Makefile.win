@@ -1,0 +1,64 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Programa.o IngreasarCliente.o UI.o Producto.o Nodo.o ContenedorCl.o NodoProducto.o ContenedorPro.o Facturas.o Inventario.o NodoInventario.o ContenedorInven.o
+LINKOBJ  = main.o Programa.o IngreasarCliente.o UI.o Producto.o Nodo.o ContenedorCl.o NodoProducto.o ContenedorPro.o Facturas.o Inventario.o NodoInventario.o ContenedorInven.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32 -m32
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Project1.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Programa.o: Programa.cpp
+	$(CPP) -c Programa.cpp -o Programa.o $(CXXFLAGS)
+
+IngreasarCliente.o: IngreasarCliente.cpp
+	$(CPP) -c IngreasarCliente.cpp -o IngreasarCliente.o $(CXXFLAGS)
+
+UI.o: UI.cpp
+	$(CPP) -c UI.cpp -o UI.o $(CXXFLAGS)
+
+Producto.o: Producto.cpp
+	$(CPP) -c Producto.cpp -o Producto.o $(CXXFLAGS)
+
+Nodo.o: Nodo.cpp
+	$(CPP) -c Nodo.cpp -o Nodo.o $(CXXFLAGS)
+
+ContenedorCl.o: ContenedorCl.cpp
+	$(CPP) -c ContenedorCl.cpp -o ContenedorCl.o $(CXXFLAGS)
+
+NodoProducto.o: NodoProducto.cpp
+	$(CPP) -c NodoProducto.cpp -o NodoProducto.o $(CXXFLAGS)
+
+ContenedorPro.o: ContenedorPro.cpp
+	$(CPP) -c ContenedorPro.cpp -o ContenedorPro.o $(CXXFLAGS)
+
+Facturas.o: Facturas.cpp
+	$(CPP) -c Facturas.cpp -o Facturas.o $(CXXFLAGS)
+
+Inventario.o: Inventario.cpp
+	$(CPP) -c Inventario.cpp -o Inventario.o $(CXXFLAGS)
+
+NodoInventario.o: NodoInventario.cpp
+	$(CPP) -c NodoInventario.cpp -o NodoInventario.o $(CXXFLAGS)
+
+ContenedorInven.o: ContenedorInven.cpp
+	$(CPP) -c ContenedorInven.cpp -o ContenedorInven.o $(CXXFLAGS)
